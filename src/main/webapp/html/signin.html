@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>CityCare Hospital – Sign In</title>
+</head>
+<body data-role="">
+
+  <div class="wrapper">
+    <div class="card">
+
+      <h2 class="title">CityCare Hospital</h2>
+
+      <form id="signinform">
+
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Enter email" >
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter password" required>
+
+        <!-- Forgot Password -->
+        <div class="forgot-password">
+          <a href="forgotpassword.html">Forgot Password?</a>
+        </div><br>
+
+        <button class="btn">Sign In</button>
+        <div id="message">
+        
+        
+        </div>
+
+      </form>
+
+      <div id="signupbox" class="signin-link">
+        Don’t have an account?
+        <a href="signup.html">Sign up</a>
+      </div>
+
+    </div>
+  </div>
+  <script> 
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+
+  if (type === "doctor") {
+      const signupBox = document.getElementById("signupbox");
+      if (signupBox) {
+          signupBox.style.display = "none";
+      }
+  }
+  </script>
+<script src="../js/signin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Appointment</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+        .conform {
+            font-weight: bold;
+        }
+
+        .conform {
+            color: green;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-btn button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>CityCare Hospital</h1>
+    <p>My Appointments</p>
+</div>
+
+<div class="container">
+
+    <table>
+  <thead>
+    <tr>
+      <th>PATIENT ID</th>
+      <th>REASON</th>
+      <th>DEPARTMENT</th>
+      <th>DATE</th>
+      <th>REPORTING TIME</th>
+      <th>STATUS</th>
+    </tr>
+  </thead>
+  <tbody id="appointmentBody"></tbody>
+</table>
+
+
+    <div class="back-btn">
+        <button onclick="history.back()">Back</button>
+    </div>
+
+</div>
+<script src="../../js/patient-js/viewappointment.js"></script>
+</body>
+</html>

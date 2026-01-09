@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment | CityCare Hospital</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1e88e5;
+            margin: 0;
+        }
+
+        .header p {
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            background: #f9fbfd;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        .back-btn {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .back-btn a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>CityCare Hospital</h1>
+    <p>Book Appointment</p>
+</div>
+
+<div class="container">
+
+    <h2>Appointment Form</h2>
+
+    <form id="bookappoinment">
+
+        <!-- Reason for Visit -->
+        <div class="form-group">
+            <label>Reason for Visit</label>
+            <select name="reason" required>
+                <option value="">-- Select Reason --</option>
+
+                <!-- General Medicine -->
+                <option value="Fever">Fever</option>
+                <option value="Cold and Cough">Cold & Cough</option>
+                <option value="Headache">Headache</option>
+                <option value="Body Pain">Body Pain</option>
+                <option value="Stomach Pain">Stomach Pain</option>
+                <option value="Vomiting">Vomiting</option>
+                <option value="Weakness">Weakness / Fatigue</option>
+
+                <!-- Cardiology -->
+                <option value="Chest Pain">Chest Pain</option>
+                <option value="High Blood Pressure">High Blood Pressure</option>
+                <option value="Heart Palpitations">Heart Palpitations</option>
+                <option value="Shortness of Breath">Shortness of Breath</option>
+
+          </select>
+        </div>
+
+        <!-- Department -->
+        <div class="form-group">
+            <label>Department</label>
+            <select name="department" required>
+                <option value="">-- Select Department --</option>
+                <option value="General_Medicine">General Medicine</option>
+                <option value="Cardiology">Cardiology</option>
+            </select>
+        </div>
+
+        <!-- Preferred Date -->
+        <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" name="appointmentDate" required>
+        </div>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+
+    <div class="back-btn">
+        <a href="patientpanel.html">← Back</a>
+    </div>
+
+</div>
+
+<script src="../../js/patient-js/bookappoinment.js"></script>
+
+</body>
+</html>

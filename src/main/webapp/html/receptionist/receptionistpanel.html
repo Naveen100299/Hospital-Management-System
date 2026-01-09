@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Receptionist Panel | CityCare Hospital</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: #f0f8ff;
+            color: #0b2540;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg,#0077b6,#0096c7);
+            color:white;
+            text-align:center;
+            padding:30px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            margin:0;
+            font-size:36px;
+        }
+
+        header p {
+            margin:5px 0;
+            font-size:16px;
+            opacity:0.9;
+        }
+
+        /* User Info */
+        .user-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #0096c7;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Logout */
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #0096c7;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav {
+            background:#023e8a;
+            text-align:center;
+            padding:12px 0;
+        }
+
+        nav a {
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            font-size:16px;
+            font-weight:600;
+        }
+
+        /* Content */
+        .container {
+            padding:40px 20px;
+            text-align:center;
+        }
+
+        h2 {
+            color:#023e8a;
+            font-size:28px;
+            margin-bottom:15px;
+        }
+
+        p {
+            font-size:16px;
+            margin-bottom:30px;
+            color:#333;
+        }
+
+        /* Cards */
+        .card-container {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:25px;
+        }
+
+        .card {
+            width:260px;
+            background:white;
+            padding:22px;
+            border-radius:15px;
+            box-shadow:0 6px 18px rgba(0,0,0,0.15);
+            text-align:center;
+        }
+
+        .card h3 {
+            color:#0077b6;
+            font-size:20px;
+            margin-bottom:10px;
+        }
+
+        .card p {
+            font-size:14px;
+            color:#444;
+            margin-bottom:15px;
+        }
+
+        .card a {
+            display:inline-block;
+            padding:10px 18px;
+            text-decoration:none;
+            background:#0096c7;
+            color:white;
+            border-radius:8px;
+            font-weight:600;
+        }
+
+        /* Footer */
+        footer {
+            background:#023e8a;
+            color:white;
+            text-align:center;
+            padding:12px 0;
+            margin-top:40px;
+            font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+   <div class="user-info">
+        Receptionist ID: <span id="user_id"></span> | Name: <span id="name"></span>
+    </div>
+
+    <button class="logout-btn">Logout</button>
+
+    <h1>CityCare Hospital</h1>
+    <p>Receptionist Dashboard</p>
+</header>
+
+<nav>
+    <a href="receptionist_home.html">Home</a>
+    <a href="register_patient.html">Register Patient</a>
+    <a href="book_appointment.html">Book Appointment</a>
+</nav>
+
+<div class="container">
+    <h2>Welcome, Receptionist</h2>
+    <p>Quick access to daily hospital operations.</p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Register Patient</h3>
+            <p>Add new patients to the hospital database.</p>
+            <a href="../receptionist/register.html?type=receptionist">Register</a>
+        </div>
+
+        <div class="card">
+            <h3>Book Appointment</h3>
+            <p>Schedule appointments with doctors.</p>
+            <a href="../receptionist/bookappoinment.html">Book</a>
+        </div>
+        <div class="card">
+    <h3>Record Vitals</h3>
+    <p>Enter BP, height, weight and SpO₂ before consultation.</p>
+    <a href="../receptionist/vitals.html">Record</a>
+</div>
+        
+
+    </div>
+</div>
+
+<footer>
+    © 2026 CityCare Hospital Management System
+</footer>
+
+<script src="../../js/receptionist-js/receptionistpanel.js"></script>
+</body>
+</html>

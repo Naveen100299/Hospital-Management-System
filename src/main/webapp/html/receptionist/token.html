@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Record Vitals | CityCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f0f8ff;
+            color: #0b2540;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg,#0077b6,#0096c7);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 6px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: #0096c7;
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 520px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #023e8a;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0077b6;
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            background: #0077b6;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005f8a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="receptionistpanel.html" class="back-btn">← Back</a>
+    <h1>CityCare Hospital</h1>
+    <p>Record Patient Vitals</p>
+</header>
+
+<div class="container">
+    <h2>Basic Health Check</h2>
+
+    <form id="vitalsForm">
+
+        <div class="form-group">
+            <label>Patient ID *</label>
+            <input type="number" name="patientId" placeholder="Enter Patient ID" required>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>BP Systolic (mmHg)</label>
+                <input type="number" name="bpSystolic" placeholder="120">
+            </div>
+
+            <div class="form-group">
+                <label>BP Diastolic (mmHg)</label>
+                <input type="number" name="bpDiastolic" placeholder="80">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Height (cm)</label>
+                <input type="number" step="0.1" name="height" placeholder="170">
+            </div>
+
+            <div class="form-group">
+                <label>Weight (kg)</label>
+                <input type="number" step="0.1" name="weight" placeholder="65">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>SpO₂ (%)</label>
+            <input type="number" name="spo2" placeholder="98">
+        </div>
+
+        <button type="submit">Save Vitals</button>
+    </form>
+</div>
+
+<footer>
+    © 2026 CityCare Hospital Management System
+</footer>
+
+</body>
+</html>

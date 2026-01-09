@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard | CityCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eef6ff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #0288d1, #039be5);
+            color: white;
+            padding: 18px 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        header p {
+            margin: 4px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .logout-btn {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .logout-btn button {
+            background: #01579b;
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 230px;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            padding-top: 20px;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            color: #0288d1;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 14px 22px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #e3f2fd;
+            color: #0288d1;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .welcome h2 {
+            margin-top: 0;
+            color: #0288d1;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 14px;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #0288d1;
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 24px;
+            margin-top: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CityCare Hospital</h1>
+    <p>Doctor Dashboard</p>
+
+    <div class="logout-btn">
+        <button>Logout</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Doctor Menu</h3>
+        <br>
+
+        <a href="#" class="active">Dashboard Overview</a>
+        <a href="../doctor/todayappoinment.html">Today’s Appointments</a>
+        <a href="../doctor/patientlist.html">Patient Records</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="welcome">
+            <h2>Welcome, <span id="name"></span></h2>
+            <p>Manage your appointments and patient records</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Doctor ID</h3>
+                <p id="user_id"></p>
+            </div>
+
+            <div class="card">
+                <h3>Department</h3>
+                <p id="department"></p>
+            </div>
+
+            <div class="card">
+                <h3>Today’s Pending</h3>
+                <p id="todayPending"></p>
+            </div>
+
+            <div class="card">
+                <h3>Total Completed</h3>
+                <p id="totalCompleted"></p>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 CityCare Hospital Management System
+        </footer>
+    </div>
+</div>
+
+<script src="../../js/doctor-js/doctorpanel.js"></script>
+</body>
+</html>

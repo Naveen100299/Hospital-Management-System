@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Today's Appointments | CityCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eef6ff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #0288d1, #039be5);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .logout-btn button {
+            background: #01579b;
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #e3f2fd;
+            color: #0288d1;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0288d1;
+        }
+
+        /* Top action */
+        .top-action {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .top-action a {
+            background: #4caf50;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background: #0288d1;
+            color: white;
+        }
+
+        .status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+        }
+       
+        .completed {
+    background: #4caf50;
+      }
+        
+        .pending {
+            background: #ff9800;
+        }
+
+        .btn {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 6px;
+            background: #0288d1;
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CityCare Hospital – Doctor Panel</h1>
+    <div class="logout-btn">
+        <button>Logout</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+  
+    <div class="sidebar">
+        <a href="../doctor/doctorpanel.html" class="active">Dashboard</a>
+        <a href="#">Today’s Appointments</a>
+        <a href="../doctor/patientlist.html">Patient Records</a>
+
+        <a href="#">Logout</a>
+    </div>
+
+
+    <!-- Main -->
+    <div class="main">
+        <h2>Today's Pending Appointments</h2>
+
+        <!-- Completed list button -->
+        <div class="top-action">
+            <a href="completed.html">View Completed Patients</a>
+        </div>
+
+        <!-- Appointments Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+          <tbody id="appointmentsBody">
+    <!-- rows will be loaded from backend -->
+</tbody>
+          
+        </table>
+
+        <footer>
+            © 2025 CityCare Hospital
+        </footer>
+    </div>
+</div>
+<script src="../../js/doctor-js/todayappoinment.js"></script>
+</body>
+</html>

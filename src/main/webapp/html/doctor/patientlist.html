@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Completed Appointments | CityCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eef6ff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #0288d1, #039be5);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #e3f2fd;
+            color: #0288d1;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0288d1;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #0288d1;
+            color: white;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: center;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f5f9ff;
+        }
+
+        /* Status badge */
+        .status {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .completed {
+            background: #4caf50;
+        }
+
+        /* Button */
+        .btn {
+            padding: 6px 16px;
+            border-radius: 8px;
+            border: none;
+            background: #0288d1;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0277bd;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CityCare Hospital – Doctor Panel</h1>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+      <div class="sidebar">
+        <a href="../doctor/doctorpanel.html" class="active">Dashboard</a>
+        <a href="../doctor/todayappoinment.html">Today’s Appointments</a>
+        <a href="#">Patient Records</a>
+
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <h2>Completed Appointments</h2>
+        <p>Edit prescriptions for completed visits</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Visited Date</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="completedbody">
+                <!-- Backend / JS will populate rows like below -->
+                <!--
+                <tr>
+                    <td>19</td>
+                    <td>1005</td>
+                    <td>Gowtham K</td>
+                    <td>2025-01-10</td>
+                    <td>Fever</td>
+                    <td><span class="status completed">COMPLETED</span></td>
+                    <td>
+                        <button class="btn"
+                            onclick="window.location.href='../html/doctorprescription.html?appointment_id=19'">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+                -->
+            </tbody>
+        </table>
+
+        <footer>
+            © 2025 CityCare Hospital
+        </footer>
+    </div>
+</div>
+
+<script src="../../js/doctor-js/patientlist.js"></script>
+</body>
+</html>
