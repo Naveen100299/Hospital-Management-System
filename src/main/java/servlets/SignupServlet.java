@@ -21,8 +21,9 @@ import models.SignupRequest;
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet{
 	@Override
-	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException 
-		response.setContentType("application/json");
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
+	
+	 response.setContentType("application/json");
 	 response.setCharacterEncoding("UTF-8");
 	BufferedReader reader= request.getReader();
 	Gson gson=new Gson();
