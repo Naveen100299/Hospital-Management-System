@@ -20,7 +20,6 @@ public class BookAppoinmentDAO {
 			statement.setString(3, appoinment.getDepartment());
 			statement.setTimestamp(4, appoinment.getAppointmentDate());
 			int row=statement.executeUpdate();
-			 System.out.println("Rows inserted: " + row);
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
