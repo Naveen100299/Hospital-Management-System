@@ -14,7 +14,7 @@ import dao.PatientImpl;
 
 @WebServlet("/getPatientName")
 public class GetPatientNameServlet extends HttpServlet {
-
+@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 

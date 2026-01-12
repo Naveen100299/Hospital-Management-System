@@ -63,7 +63,7 @@ ${
                     </tr>
                 `;
 
-                // ✅ THIS WAS THE MISSING LINE (VERY IMPORTANT)
+                
                 tbody.insertAdjacentHTML("beforeend", row);
             });
         })

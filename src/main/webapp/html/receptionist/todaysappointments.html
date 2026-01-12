@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Today's Appointments | CityCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eef6ff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #0288d1, #039be5);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        /* Back button */
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .back-btn a {
+            background: #01579b;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Main */
+        .main {
+            padding: 30px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0288d1;
+            text-align: center;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background: #0288d1;
+            color: white;
+        }
+
+        /* Status */
+        .status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .pending {
+            background: #ff9800;
+        }
+
+        .completed {
+            background: #4caf50;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="back-btn">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+    <h1>CityCare Hospital</h1>
+</header>
+
+<div class="main">
+    <h2>Today's Appointments</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Appointment ID</th>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>Reason</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="todayappointments">
+            
+        </tbody>
+    </table>
+
+    <footer>
+        © 2025 CityCare Hospital
+    </footer>
+</div>
+<script src="../../js/receptionist-js/todayappoinments.js"></script>
+</body>
+</html>
