@@ -1,33 +1,21 @@
 package models;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class AppoinmentRequest {
 	private int appoint_id;
 	private int user_id;
 	private String name;
 	private String reason;
+	private Status status;
 	private String department;
 	private Timestamp appointmentDate;
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public enum Status {
 		Completed,Pending
 	}
-	private Status status;
 	
-	
-	public Status getStatus() {
-		return status;
-	}
-	public void setStatus(Status status) {
-		this.status = status;
-	}
 	public int getAppoint_id() {
 		return appoint_id;
 	}
@@ -40,11 +28,23 @@ public class AppoinmentRequest {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getReason() {
 		return reason;
 	}
 	public void setReason(String reason) {
 		this.reason = reason;
+	}
+	public Status getStatus() {
+		return status;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 	public String getDepartment() {
 		return department;
@@ -58,6 +58,7 @@ public class AppoinmentRequest {
 	public void setAppointmentDate(java.sql.Timestamp timestamp) {
 		this.appointmentDate = timestamp;
 	}
+	
 	
 
 }
