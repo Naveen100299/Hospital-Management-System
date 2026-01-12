@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient History | CityCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eef6ff;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, #0288d1, #039be5);
+            color: #fff;
+            padding: 18px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .back-btn a {
+            background: #01579b;
+            color: #fff;
+            padding: 7px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* MAIN */
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background: #0288d1;
+            color: #fff;
+        }
+
+        tr:hover {
+            background: #f1f9ff;
+        }
+
+        /* STATUS */
+        .status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .completed {
+            background: #4caf50;
+        }
+
+        .pending {
+            background: #ff9800;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            th, td {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="back-btn">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+    <h1>CityCare Hospital</h1>
+</header>
+
+<div class="container">
+    <h2>Patient Appointment History</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Appointment ID</th>
+                <th>Date</th>
+                <th>Department</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- SAMPLE ROWS (replace later with backend data) -->
+            <tr>
+                <td>101</td>
+                <td>12-01-2026</td>
+                <td>General Medicine</td>
+                <td>Fever</td>
+                <td>
+                    <span class="status completed">COMPLETED</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>15-01-2026</td>
+                <td>Cardiology</td>
+                <td>Chest Pain</td>
+                <td>
+                    <span class="status pending">PENDING</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    © 2026 CityCare Hospital Management System
+</footer>
+
+</body>
+</html>
