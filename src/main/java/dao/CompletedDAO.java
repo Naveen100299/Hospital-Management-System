@@ -14,17 +14,24 @@ import models.SignupRequest;
 public class CompletedDAO {
 	
 	public List<AppoinmentRequest> completed(String dept){
-		System.out.println(dept);
+
 		List<AppoinmentRequest> list=new ArrayList<>();
+		
+		
 		Connection con=DButils.getConnection();
 		try {
-			String queries;
+			String query =
+			        "SELECT a.appointment_id, a.user_id, a.reason, a.preferred_date, a.status, u.name "
+			      + "FROM appointments a "
+			      + "JOIN users u ON a.user_id = u.user_id "
+			      + "JOIN patient_history ph ON ph.user_id = a.user_id "
+			      + "WHERE a.department = ? "
+			      + "AND a.status = 'Completed' "
+			      + "ORDER BY ph.updated_at DESC";
 			
-			queries="SELECT a.appointment_id,a.user_id,a.reason,a.preferred_date,a.status,u.name "
-					+ "FROM appointments a join users u on a.user_id=u.user_id "
-					+ "WHERE a.department=? AND a.status = 'Completed' ORDER BY preferred_date DESC";
-			PreparedStatement statement=con.prepareStatement(queries);
+             PreparedStatement statement=con.prepareStatement(query);
 			statement.setString(1, dept);
+			
 			ResultSet rs= statement.executeQuery();
 			while(rs.next()) {
 				AppoinmentRequest appoinmentRequest=new AppoinmentRequest();

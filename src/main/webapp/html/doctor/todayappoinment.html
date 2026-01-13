@@ -166,8 +166,6 @@
         <a href="../doctor/doctorpanel.html" class="active">Dashboard</a>
         <a href="#">Today’s Appointments</a>
         <a href="../doctor/patientlist.html">Patient Records</a>
-
-        <a href="#">Logout</a>
     </div>
 
 
@@ -175,10 +173,6 @@
     <div class="main">
         <h2>Today's Pending Appointments</h2>
 
-        <!-- Completed list button -->
-        <div class="top-action">
-            <a href="completed.html">View Completed Patients</a>
-        </div>
 
         <!-- Appointments Table -->
         <table>
@@ -203,6 +197,15 @@
         </footer>
     </div>
 </div>
+<script>
+window.addEventListener("pageshow", function (event) {
+    if (sessionStorage.getItem("forceReload") === "true") {
+        sessionStorage.removeItem("forceReload");
+        window.location.reload();
+    }
+});
+</script>
+
 <script src="../../js/doctor-js/todayappoinment.js"></script>
 </body>
 </html>
