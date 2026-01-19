@@ -15,12 +15,9 @@ import com.google.gson.Gson;
 import dao.Patient;
 import dao.PatientImpl;
 import models.SignupRequest;
-
-@WebServlet("/signup")
-public class SignupServlet extends HttpServlet {
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+@WebServlet("/receptionistSignup")
+public class ReceptionistSignup extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
@@ -33,9 +30,9 @@ public class SignupServlet extends HttpServlet {
             SignupRequest signupRequest = gson.fromJson(reader, SignupRequest.class);
 
 
-            Patient patientDao = new PatientImpl();
+            PatientImpl patientDao = new PatientImpl();
 
-           int patientId= patientDao.Signup(signupRequest);
+           int patientId= patientDao.receptionistSignup(signupRequest);
 
             Map<String, Object> json = new HashMap<>();
             json.put("status", true);
@@ -53,4 +50,7 @@ public class SignupServlet extends HttpServlet {
             response.getWriter().write(gson.toJson(error));
         }
     }
+	
+	
+
 }

@@ -12,7 +12,7 @@ import models.AppoinmentRequest.Status;
 public class AppoinmentDAO {
 	 
 	public List<AppoinmentRequest> viewAppointment(String  dept){
-		System.out.println(dept);
+		
 		List<AppoinmentRequest> list=new ArrayList<>();
 		Connection con=DButils.getConnection();
 		try {
