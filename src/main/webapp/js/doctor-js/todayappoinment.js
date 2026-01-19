@@ -32,9 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             data.forEach(app => {
 
-                console.log("APP OBJECT =>", app); // 🔍 debug (remove later)
 
-                const statusText = app.status.toUpperCase(); // PENDING / COMPLETED
+                const statusText = app.status.toUpperCase(); 
                 const statusClass = statusText.toLowerCase();
 
                 const row = `

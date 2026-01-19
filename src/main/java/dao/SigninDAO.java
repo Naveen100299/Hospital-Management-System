@@ -48,6 +48,7 @@ public class SigninDAO {
 
             String deptStr = rs.getString("department");
             if (deptStr != null) {
+            	
                 signupRequest.setDepartment(Department.valueOf(deptStr));
             }
          

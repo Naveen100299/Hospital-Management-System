@@ -1,0 +1,38 @@
+package servlets;
+
+import java.io.IOException;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+
+import dao.CountDao;
+import models.CountRequst;
+import models.SignupRequest;
+
+@WebServlet("/count")
+public class CountPendingAndCompleted extends HttpServlet {
+	
+	
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		 response.setContentType("application/json");
+	        response.setCharacterEncoding("UTF-8");
+
+	       
+	        HttpSession session = request.getSession(false);
+	        if (session == null || session.getAttribute("user") == null) {
+	            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+	            return;
+	        }
+	       SignupRequest signupRequest= (SignupRequest) session.getAttribute("user");
+	      CountDao dao=new CountDao();
+	     CountRequst countdao= dao.viewcount(signupRequest.getDepartment().name());
+	     Gson gson=new Gson();
+	     response.getWriter().write(gson.toJson(countdao));
+	}
+
+}

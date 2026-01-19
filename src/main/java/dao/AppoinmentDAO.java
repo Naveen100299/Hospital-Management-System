@@ -12,7 +12,7 @@ import models.AppoinmentRequest.Status;
 public class AppoinmentDAO {
 	 
 	public List<AppoinmentRequest> viewAppointment(String  dept){
-		System.out.println(dept);
+		
 		List<AppoinmentRequest> list=new ArrayList<>();
 		Connection con=DButils.getConnection();
 		try {
@@ -54,13 +54,14 @@ public class AppoinmentDAO {
 	    List<AppoinmentRequest> list = new ArrayList<>();
 
 	    String query =
-	        "SELECT a.appointment_id, a.user_id, u.name, a.reason, a.status, a.preferred_date " +
-	        "FROM appointments a " +
-	        "JOIN users u ON a.user_id = u.user_id " +
-	        "WHERE u.role = 'PATIENT' " +
-	        "AND a.created_at >= CURDATE() " +
-	        "AND a.created_at < CURDATE() + INTERVAL 1 DAY " +
-	        "ORDER BY a.preferred_date DESC";
+	    	    "SELECT a.appointment_id, a.user_id, u.name, a.reason, a.status, a.preferred_date " +
+	    	    "FROM appointments a " +
+	    	    "JOIN users u ON a.user_id = u.user_id " +
+	    	    "WHERE u.role = 'PATIENT' " +
+	    	    "AND DATE(a.preferred_date) = CURDATE() " +
+	    	    "AND a.status IN ('PENDING', 'COMPLETED') " +
+	    	    "ORDER BY a.preferred_date DESC";
+
 
 	    try (Connection con = DButils.getConnection();
 	         PreparedStatement ps = con.prepareStatement(query);

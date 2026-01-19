@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "<td>" + app.user_id + "</td>" +
                     "<td>" + app.name + "</td>" +
                     "<td>" + app.reason + "</td>" +
-                    "<td>" + appointmentDate + "</td>" +
+                    "<td>" + app.appointmentDate + "</td>" +
                     "<td><span class='status " + statusClass + "'>" +
                     statusText +
                     "</span></td>" +

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import Exception.DataAccessException;
 import dao.AppoinmentDAO;
@@ -29,7 +30,7 @@ public class TodayAppointRecpServlet extends HttpServlet {
         AppoinmentDAO dao = new AppoinmentDAO();
         List<AppoinmentRequest> list = dao.viewTodayAppointments();
 
-        Gson gson = new Gson();
+        Gson gson =new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         response.getWriter().write(gson.toJson(list));
     }
 }

@@ -9,7 +9,7 @@ form.addEventListener("submit", function (e) {
         formDataObj[key] = value;
     });
 
-    fetch("/HMS/signup", {
+    fetch("/HMS/receptionistSignup", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

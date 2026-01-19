@@ -5,6 +5,6 @@ import Exception.ValidationException;
 import models.SignupRequest;
 
 public interface Patient {
-	public int Sigup(SignupRequest user,String role) throws ValidationException, DataAccessException;
+	public int Signup(SignupRequest user) throws ValidationException, DataAccessException;
 
 }
